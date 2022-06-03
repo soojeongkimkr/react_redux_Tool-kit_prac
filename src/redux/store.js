@@ -1,8 +1,17 @@
-import {createStore, combineReducers} from "redux";
+// import {createStore, combineReducers} from "redux";
 
-import cat from "./modules/cat";
+// import cat from "./modules/cat";
 
-const rootReducer = combineReducers({cat});
-const store = createStore(rootReducer);
+// const rootReducer = combineReducers({cat});
+// const store = createStore(rootReducer);
+
+// export default store;
+
+import {configureStore} from "@reduxjs/toolkit";
+import catReducer from './modules/catSlice';
+
+const store = configureStore({reducer: {
+    cat: catReducer,
+}});
 
 export default store;
